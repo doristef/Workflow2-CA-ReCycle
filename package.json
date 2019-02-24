@@ -1,0 +1,21 @@
+{
+  "name": "workflow2-ca",
+  "version": "1.0.0",
+  "description": "Workflow 2, Course Assignment: Automate Semester Project",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-sass": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-mozjpeg": "^8.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Halldor Valur Stefansson",
+  "license": "ISC"
+}

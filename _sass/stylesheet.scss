@@ -1,0 +1,366 @@
+/* COLOR PALETTE --
+    #F5F2F2 - Light Gray, Body
+    #F0EFF4 - Light Gray, Wrapper
+    #333333 - Dark Gray, Font
+    #A60A15 - Dark Red, Font
+    #3C4D56 - Dark Blue, Top & Footer
+    #DBE373 - Lime Yellow, Blockquote
+    #F9D423 -   Yellow, Blockquote hover
+    #B7DB32 - Lime Green, Nav
+*/
+
+/*-----------------------------------------
+---- GLOBAL styles ------------------------
+-----------------------------------------*/  
+/* Import Open Sans from Google Fontsvasd */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,700,700i');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background: #F5F2F2;
+    color: #333;
+}
+
+div#wrapper {
+    display: flex;  
+    flex-flow: row wrap;
+    background-color: #F0EFF4;
+    max-width: 2200px;
+}  
+
+/* flex sizes */
+header { width: 100%; }
+nav { width: 100%; order: 1; }
+aside.event { flex: 1; order: 3;}
+section.main { flex: 2;  order: 2;}
+section.mpopular { width: 100%; order: 4; }
+section.review { width: 100%; order: 5;}
+footer { width: 100%; order: 6;}
+
+/*-----------------------------------------
+---- TEXT styles --------------------------
+-----------------------------------------*/      
+h1 {
+    margin: 0 0 .8em 0;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+h2 {
+    margin: 0 0 .5em 0;
+    font-size: 1.8em;
+    font-weight: 700;
+    line-height: 1.1em;
+}
+h3 {
+    margin: 0 0 .5em 0;
+    font-size: 1.3em;
+    font-weight: 700;
+    line-height: 1em;
+}
+h4 {
+    margin: 0 0 1.5em 0;
+    font-size: .9em;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 0.9em;
+}
+
+p { margin: 0 0 0.5em 0; }
+
+a { color: #333; text-decoration: none; }
+a:visited { color: #333; }
+a:hover { color: #A60A15; text-decoration: underline; }
+
+a.button { 
+    font-size: 1.3em; 
+    font-weight: 700; 
+    text-decoration: none; 
+    color: #F0EFF4; 
+    background-color: #A60A15;
+    border: 1px solid #333; 
+    padding: 10px; }
+a.button:hover { background-color: #F0EFF4; color: #A60A15; }
+
+
+/*-----------------------------------------
+HEADER, styles ----------------------------
+-----------------------------------------*/
+
+header {
+    height: 425px;
+    background: linear-gradient( rgba(242, 225, 225, 0.10), rgba(242, 225, 225, 0.65) ), url('../_img/woods_2000.jpg') no-repeat center top;
+    position: relative;
+}
+
+header a.logo {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 75px;
+    background: #3C4D56 url('../_img/logo.png') no-repeat 15px 2px;
+    margin: 0;
+}
+
+header a span { display: none; } /* Hide link text */
+header div.hero { position: absolute; bottom: 0; right: 20px; text-transform: uppercase; }
+header div.hero h1 { font-size: 1.6em; line-height: 1em; margin: 0 0 20px 0;}
+
+
+/*-----------------------------------------
+---- SECTION styles -----------------------
+-----------------------------------------*/
+section, aside { padding: 25px 30px; margin: 0; }
+section h2, h3, aside h2, h3 { color: #A60A15; }
+
+/* main */
+section.main article {
+    padding-left: 25px;
+    margin-bottom: 50px;
+}
+
+section.main article img {
+    float:left; 
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+}
+
+
+/* most popular */
+section.mpopular {
+    background: #B7DB32; 
+    border: 1px solid #333;
+    
+}
+section.mpopular h2 { text-align: center; }
+section.mpopular article { margin: 10px auto; max-width: 900px; }
+
+section.mpopular article img { float: left; margin: 25px; border-radius: 15px; }
+section.mpopular article a.button { margin-top: 35px; float: right; }
+
+
+/* review */
+section.review {
+    background-color: #F0EFF4; 
+    padding: 30px;
+    text-align: center;
+    
+}
+section.review h2 { text-align: left; }
+section.review blockquote {
+    background-color: #DBE373;
+    border: 1px dashed #333;
+    width: 44%;
+    max-width: 350px;
+    vertical-align: top;
+    margin: 10px;
+    padding-top: 10px;
+    position: relative;
+    display: inline-block;
+    
+}
+section.review blockquote:hover { background-color: #F9D423; }
+
+section.review blockquote p { margin: 20px 30px; }
+section.review blockquote p.quote { font-style: italic; font-size: 1.2em; }
+
+section.review blockquote p.credit {
+    color: #777;
+    font-size: 0.8em;
+    line-height: 1.2em;
+    margin-top: 0;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+section.review blockquote::before {
+    content: '\201C';
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 8px;
+    font-size: 3em;
+    font-family: serif;
+}
+
+section.review blockquote p.quote::after {
+    content: '\201D';
+    color: black;
+    font-family: serif;
+}
+
+section.review blockquote p.credit::before {
+    content: '\2014 ';
+    color: black;
+    font-family: serif;
+}
+
+
+/*-----------------------------------------
+---- ASIDE, styles ------------------------
+-----------------------------------------*/
+/* events */
+aside.event {
+    
+}
+
+aside.event ul {
+    margin: 0 0 0 35px; padding: 0; list-style: circle;
+}
+
+/*-----------------------------------------
+---- NAVIGATION styles --------------------
+-----------------------------------------*/
+nav {
+    background-color: #B7DB32;
+    margin: 0 0 20px 0;
+    border-top: 3px solid #333;
+    border-bottom: 1px solid #333;
+    color: #222;
+}
+
+nav ul { list-style: none; padding: 0; margin: 0; }
+
+nav ul li a { 
+    color: #333;
+    display: inline-block; 
+    font-size: 1.1em; 
+    font-weight: 700; 
+    text-align: center;
+    text-decoration: none; 
+    width: 110px; 
+    padding: 20px; 
+    margin-right: 5px;
+}
+nav ul li a:visited { color: #222; }
+nav ul li a:hover { background-color: #F0EFF4; color: #A60A15; text-decoration: none; }
+
+nav > ul > li { display: inline-block; }
+
+
+/*-----------------------------------------
+---- FOOTER styles ------------------------
+-----------------------------------------*/
+footer { 
+    background: #3C4D56; 
+    color: #CDD1AB; 
+    text-align: center; 
+    font-size: 0.8em; 
+    padding-top: 15px; 
+    padding-bottom: 25px; }
+
+footer div.terms { display: inline; }
+footer div.terms a { text-decoration: none; color: #CDD1AB; margin-left: 20px; }
+footer div.terms a:hover { text-decoration: underline; color: #F9D423; }
+
+footer div#designer { margin-top: 20px }
+footer div#designer a { text-decoration: none; color: #CDD1AB; }
+footer div#designer a:hover { text-decoration: underline; color: #F9D423; }
+
+
+
+/*-----------------------------------------------
+---- FORM styles --------------------------------
+-----------------------------------------------*/
+input[type="text"], input[type="email"], input[type="tel"], textarea{
+    width: 75%; 
+    font-size: 1.4em;
+    border: 1px solid #A60A15; 
+    border-radius: 8px;
+    padding: 10px; 
+    margin: 5px 0;
+    box-sizing: border-box;   /* Fix the fit */
+}
+
+textarea {
+    height: 150px;
+    font-size: 1.6em;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
+    border: 1px solid #B7DB32;
+    border-bottom: 5px solid #B7DB32; /* Make it look obvious */
+    outline: none;
+    font-size: 1.8em;
+} 
+
+input[type="submit"] {
+    background-color: #A60A15;
+    color: #F0EFF4; 
+    font-size: 2em;
+    font-weight: 700;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 10px; /* Make it look round and nice */
+}
+        
+input[type="submit"]:hover { background-color: #F0EFF4; color: #A60A15; }
+        
+.submit { text-align: center; margin: 15px; }
+
+
+/*-----------------------------------------
+---- MEDIA styles -------------------------
+-----------------------------------------*/
+@media screen and (max-width: 1400px) {
+    /* header */
+    header {
+    height: 400px;
+    background: linear-gradient( rgba(242, 225, 225, 0.10), rgba(242, 225, 225, 0.65) ), url('../_img/woods_1400.jpg') no-repeat center top; }
+}
+    
+@media screen and (max-width: 650px) {
+    /* header */
+    header {
+    height: 300px;
+    background: linear-gradient( rgba(242, 225, 225, 0.10), rgba(242, 225, 225, 0.65) ), url('../_img/woods_800.jpg') no-repeat center top; }
+    header div.hero h1 { font-size: 1.2em; }
+    header a.logo { height: 55px; background-size: 175px 52.5px; }
+    
+    /* navigation */
+    nav { margin: 0; border-bottom: 3px solid #333; }
+    nav > ul > li { display: block; text-align: center; }
+    nav ul li:hover { background-color: #F0EFF4;}
+    
+    a.button { font-size: 1em; }
+    
+    /* order */
+    aside.event { width: 100%; flex: auto; order: 4;}
+    section.mpopular { order: 1; border-top: 3px solid #333; }
+    section.review { order: 3; }
+    section.main { width: 100%; flex: auto; order: 2;}
+    nav { order: 5; }
+    footer { order: 6;}
+    
+    /* review */
+    section.review blockquote { width: 85%; background-color: #AEE239; }
+    /* aside event */
+    aside.event { 
+        padding-bottom: 50px; 
+        margin-top: 20px;    
+        background: #3C4D56; 
+        color: #CDD1AB;}
+    aside.event a { text-decoration: none; color: #CDD1AB; }
+    aside.event a:hover { text-decoration: underline; color: #F9D423; }
+    aside.event h2 { color: #CDD1AB;}
+    
+    /* footer */
+    footer { padding-top: 25px; }
+    footer div.terms a { display: block; margin: 10px 0; }
+    
+    /* forms */
+    input[type="text"], input[type="email"], input[type="tel"], textarea{
+        width: 100%; } 
+}
